@@ -71,11 +71,9 @@ body.landing  {
 
 .ion-music-note,
 .ion-radio-waves,
-<<<<<<< HEAD
+
 .ion-iphone  {
-=======
-.ion-phone  {
->>>>>>> checkpoint-3-html
+
     color: rgb(233,50,117);
     font-size: 5rem;
 }
