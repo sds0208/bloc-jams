@@ -73,6 +73,7 @@ body.landing  {
 .ion-radio-waves,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .ion-iphone  {
 =======
 .ion-phone  {
@@ -80,6 +81,11 @@ body.landing  {
 =======
 .ion-iphone  {
 >>>>>>> checkpoint-3-html
+=======
+
+.ion-iphone  {
+
+>>>>>>> 1f79ed91088d99c5085ca3d23ea0ec03e5829f16
     color: rgb(233,50,117);
     font-size: 5rem;
 }
