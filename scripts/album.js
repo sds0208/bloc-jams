@@ -29,6 +29,33 @@ var albumMarconi = {
     ]
 };
 
+//Third Album Example
+var albumRedHotChiliPeppers = {
+    title: 'By The Way',
+    artist: 'Red Hot Chili Peppers',
+    label: 'Warner Bros. Records',
+    year: '1999',
+    albumArtUrl: 'assets/images/album_covers/Rhcp9.jpg',
+    songs: [
+        { title: 'By the Way?', duration: '3:37' },
+        { title: 'Universally Speaking', duration: '4:19' },
+        { title: 'This is the Place', duration: '4:17'},
+        { title: 'Dosed', duration: '5:12' },
+        { title: "Don't Forget Me", duration: '4:37'},
+        { title: 'The Zephyr Song', duration: '3:52'},
+        { title: "Can't Stop", duration: '4:29'},
+        { title: 'I Could Die for You', duration: '3:13' },
+        { title: 'Midnight', duration: '4:55' },
+        { title: 'Throw Away Your Television', duration: '3:44'},
+        { title: 'Cabron', duration: '3:38' },
+        { title: "Tear", duration: '5:17'},
+        { title: 'On Mercury', duration: '3:28'},
+        { title: "Minor Thing", duration: '3:37'},
+        { title: 'Warm Tape', duration: '4:16' },
+        { title: 'Venice Queen', duration: '6:07' },
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
        '<tr class="album-view-song-item">'
@@ -40,14 +67,14 @@ var createSongRow = function(songNumber, songName, songLength) {
 
     return template;
 };
-var setCurrentAlbum = function(album) {
-    // #1
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
+var setCurrentAlbum = function(album) {
     // #2
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
@@ -65,4 +92,15 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+
+    var albumArray = [albumPicasso, albumMarconi, albumRedHotChiliPeppers];
+    var index = 0;
+
+    albumImage.addEventListener("click", function(event)  {
+      setCurrentAlbum(albumArray[index]);
+      index++;
+      if ( index == albumArray.length ) {
+        index = 0;
+      }
+    });
 };
