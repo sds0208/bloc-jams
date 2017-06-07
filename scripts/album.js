@@ -170,8 +170,8 @@ var previousSong = function() {
 };
 
 var setSong = function( newSongNumber )  {
-    var SongNumber = parseInt(newSongNumber);
-    currentlyPlayingSongNumber = SongNumber;
+    var songNumber = parseInt(newSongNumber);
+    currentlyPlayingSongNumber = songNumber;
     currentSongFromAlbum = currentAlbum.songs[songNumber -1];
 };
 
