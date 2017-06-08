@@ -109,11 +109,24 @@ var currentVolume = 80;
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
+var $playPauseButton = $('.main-controls .play-pause');
 
 $(document).ready(function()  {
     setCurrentAlbum(albumPicasso);
     $previousButton.click(previousSong);
     $nextButton.click(nextSong);
+    $playPauseButton.click(function(togglePlayFromPlayerBar)  {
+        var $songNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
+        if ( currentSoundFile.isPaused())  {
+            $songNumberCell.html(pauseButtonTemplate);
+            $playPauseButton.html(playerBarPauseButton);
+            currentSoundFile.play();
+        } else if ( currentSoundFile.isPaused() == false )  {
+            $songNumberCell.html(playButtonTemplate);
+            $playPauseButton.html(playerBarPlayButton);
+            currentSoundFile.pause();
+        }
+    });
 
 });
 
